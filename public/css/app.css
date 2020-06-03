@@ -1,0 +1,99 @@
+.dropdown_menu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+li {
+  text-decoration: none;
+  padding-left: 105px;
+  list-style: none;
+  color: #A69F94;
+}
+
+a {
+  text-decoration: none;
+  color: #A69F94;
+  font-family: "Avenir", sans-serif;
+  text-transform: uppercase;
+}
+
+.home {
+  background-color: #F6FCED;
+  height: 100vh;
+  width: 100%;
+}
+
+.title {
+  color: #A69F94;
+  font-family: "Avenir", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 80px;
+  text-align: center;
+}
+
+.text {
+  background-color: red;
+  margin-top: 50px;
+}
+
+h4 {
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.subtitle {
+  color: #A69F94;
+  font-family: "Avenir", sans-serif;
+  font-weight: 200;
+  text-transform: uppercase;
+  font-size: 50px;
+  text-align: center;
+  padding-top: 0px;
+}
+
+.titleNewsletter {
+  color: #A69F94;
+  font-family: "Avenir", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 50px;
+}
+
+.text {
+  background-color: #F6FCED;
+  width: 450px;
+  font-family: "Avenir", sans-serif;
+  padding: 15px;
+  color: #A69F94;
+}
+
+.pages {
+  margin-left: 150px;
+  margin-right: 150px;
+  margin-top: 50px;
+}
+
+.form {
+  margin-top: 55px;
+}
+
+label {
+  color: #A69F94;
+  font-family: "Avenir", sans-serif;
+  text-transform: uppercase;
+  font-size: 15px;
+}
+
+input {
+  width: 350px;
+  height: 20px;
+}
+
+.submit {
+  background-color: #F6FCED;
+  text-transform: uppercase;
+  width: 350px;
+}
+

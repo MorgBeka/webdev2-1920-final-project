@@ -1,0 +1,46 @@
+.titleNewsletter{
+    color: #A69F94;
+    font-family: $font-family-avenir;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 50px;
+}
+
+.text{
+    background-color: $lightGreen;
+    width: 450px;
+    font-family: $font-family-avenir;
+    padding: 15px;
+    color: $grey;
+  
+}
+
+.pages{
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 50px;
+}
+
+.form{
+    margin-top: 55px;
+}
+
+label{
+    color: $grey;
+    font-family: $font-family-avenir;
+    text-transform: uppercase;
+    font-size: 15px;
+
+}
+
+input{
+    width: 350px;
+    height: 20px;
+}
+
+.submit{
+    background-color: $lightGreen;
+    text-transform: uppercase;
+    width: 350px;
+
+}

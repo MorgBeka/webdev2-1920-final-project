@@ -1,0 +1,22 @@
+
+.dropdown_menu{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+
+li {
+    text-decoration: none;
+    padding-left: 105px;
+    list-style: none;
+    color: $grey;
+
+}
+
+a{
+    text-decoration: none;
+    color: $grey;
+    font-family: $font-family-avenir;
+    text-transform: uppercase;
+}
