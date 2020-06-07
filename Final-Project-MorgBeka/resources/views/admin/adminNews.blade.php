@@ -2,7 +2,7 @@
 
 <table class="table">
     <tr>
-        <th>TITEL</th>
+        <th class="head">TITEL</th>
         <th>SUMMARY</th>
         <th>CONTENT</th>
         <th>EDIT</th>

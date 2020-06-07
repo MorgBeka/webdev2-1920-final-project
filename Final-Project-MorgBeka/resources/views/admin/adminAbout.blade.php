@@ -1,8 +1,12 @@
+@extends('layoutAuth')
+
+@section('content')
+
 <h1 class="title">about admin table</h1>
 
-<table class="tableAbout">
+<table class="test">
     <tr>
-        <th>TITEL</th>
+        <th class="element">TITEL</th>
         <th>SUMMARY</th>
         <th>CONTENT</th>
         <th>EDIT</th>
@@ -23,3 +27,4 @@
     </tr>
     @endforeach
 </table>
+@endsection
