@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Contact;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -24,17 +25,26 @@ class ContactController extends Controller
      */
     public function index()
     {
-        return view('contact');
+        return view('pages.contact');
     }
 
-    public function getIndex() {
-        $title = 'Contact';
-        $text = "Heeft u een vraag of een opmerking? Laat het ons hier weten! ";
 
 
-        return view('pages.contact', [
-            'title' => $title,
-            'text' => $text,
+    public function save(Request $request){
+        \request()->validate([
+            'email' => 'required',
+            'subject' => 'required',
+            'message' => 'required',
         ]);
+
+        $data = [
+            'name' => request('email'),
+            'subject' => request('subject'),
+            'message' => request('message'),
+        ];
+
+        Contact::create($data);
+        return view('pages.contact');
+
     }
 }

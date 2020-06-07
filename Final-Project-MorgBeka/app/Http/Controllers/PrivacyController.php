@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Privacy;
 use Illuminate\Http\Request;
 
 class PrivacyController extends Controller
@@ -24,14 +25,9 @@ class PrivacyController extends Controller
      */
     public function index()
     {
-        return view('privacy');
+        $privacy = Privacy::all();
+        return view('pages.privacy')->with(compact('privacy'));
     }
 
-    public function getIndex() {
-        $title = 'Privacy';
 
-        return view('pages.privacy', [
-            'title' => $title,
-        ]);
-    }
 }

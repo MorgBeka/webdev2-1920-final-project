@@ -9,6 +9,9 @@
     <title>Hello Fresh</title>
 </head>
 <body>
+      @if(Auth::check())
+      <h1>Test</h1>
+      @else
 
     <div class="topbar">
         <div class="row">
@@ -20,11 +23,9 @@
                 <li role="menuitem"><a href="{{route('news') }}">Nieuws</a></li>
                 <li role="menuitem"><a href="{{route('contact') }}">Contact</a></li>
                 <li role="menuitem"><a href="{{route('privacy') }}">Privacy</a></li>
-
-
-
             </ul>
         </div>
     </div>
+    @endif
 </body>
 </html>

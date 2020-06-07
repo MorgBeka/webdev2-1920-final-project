@@ -1,14 +1,21 @@
-@import
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
 
-'variables',
+// Variables
+@import 'variables';
+@import 'pages/about';
+@import 'pages/contact';
+@import 'pages/donation';
+@import 'pages/home';
+@import 'pages/news';
+@import 'pages/newsletter';
+@import 'pages/privacy';
+@import 'partials/footer';
+@import 'partials/header';
 
-'partials/header',
-'partials/footer',
+@import 'admin/admin';
 
-'pages/about',
-'pages/contact',
-'pages/donation',
-'pages/home',
-'pages/news',
-'pages/newsletter',
-'pages/privacy'
+
+// Bootstrap
+/* @import '~bootstrap/scss/bootstrap';
+ */

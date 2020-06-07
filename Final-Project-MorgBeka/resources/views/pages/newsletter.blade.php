@@ -15,7 +15,6 @@
 <body>
 
     <div class="pages">
-        <div class="row">
                 <div class="titleNewsletter">
                     <h4>{{ $title }}</h4>
                 </div>
@@ -31,11 +30,9 @@
                     <input type="text" id="lastName" name="lastName"><br><br>
                     <label classname="form__label" for="email">E-mailadres</label><br>
                     <input type="text" id="email" name="email"><br><br>
-                    
+
                     <input classname="submit" type="submit" value="Schrijf in">
                   </form>
-
-        </div>
     </div>
 </body>
 </html>

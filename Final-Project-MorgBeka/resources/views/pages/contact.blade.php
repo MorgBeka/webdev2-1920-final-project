@@ -15,27 +15,25 @@
 <body>
 
     <div class="pages">
-        <div class="row">
                 <div class="titleNewsletter">
-                    <h4>{{ $title }}</h4>
+                    <h4>CONTACT</h4>
                 </div>
 
                 <div class="text">
-                    <p>{{ $text }}</p>
+                    <p>Heeft u een vraag of een opmerking? Laat het ons hier weten! </p>
                 </div>
 
-                <form class="form">
+                <form class="form" method="POST" action="{{ route('saveContact') }}">
+                    @csrf
                     <label classname="form__label" for="email">E-mailadres</label><br>
-                    <input type="text" id="firstName" name="firstName"><br><br>
+                    <input type="text" id="email" name="email"><br><br>
                     <label classname="form__label" for="subject">Onderwerp</label><br>
                     <input type="text" id="subject" name="subject"><br><br>
                     <label classname="form__label" for="message">Bericht</label><br>
                     <textarea type="text" id="message" name="message" rows="4" cols="45"></textarea><br><br>
 
                     <input classname="submit" type="submit" value="Verzend">
-                  </form>
-
-        </div>
+                </form>
     </div>
 </body>
 </html>
