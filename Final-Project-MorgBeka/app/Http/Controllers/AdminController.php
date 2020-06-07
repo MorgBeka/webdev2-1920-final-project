@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\About as AppAbout;
 use Illuminate\Http\Request;
 use App\About; //ophalen model (model bevat de data)
+use App\Contact;
 use App\News;
 use App\Privacy;
 use Illuminate\Support\Facades\Redirect;
@@ -306,6 +307,71 @@ class AdminController extends Controller
         return view('admin.adminPrivacy')->with(compact('privacy'));
 
     }
+
+
+
+    // contact
+
+    public function contact(){
+        $contact = Contact::all(); //data in een variabele steken
+        return view('admin.adminContact')->with(compact('contact')); //with compact = meegeven naar view
+    }
+
+    public function contactCreate(){
+        return view('admin.creates.createContact');
+    }
+
+    public function contactSave(Request $request){
+        \request()->validate([
+            'content' => 'required',
+            'summary' => 'required',
+        ]);
+
+        $data = [
+            'title' => request('title'),
+            'content' => request('content'),
+            'summary' => request('summary'),
+        ];
+
+
+        Privacy::create($data);
+
+        $privacy = Privacy::all();
+        return view('pages.contact')->with(compact('contact'));
+
+    }
+
+    public function contactEdit($contact_id){
+        $contact = Contact::where('id', $contact_id)->first();
+
+
+        return view('admin.edits.editContact')->with(compact('contact'));
+
+    }
+
+    public function contactUpdate($contact_id){
+        $contact = Contact::where('id', $contact_id)->first();
+
+        $data = [
+            'title' => request('title'),
+            'content' => request('content'),
+            'summary' => request('summary'),
+        ];
+
+        $contact->update($data);
+        $contact = Contact::all();
+
+        return view('admin.adminPContact')->with(compact('contact'));
+
+    }
+
+    public function privacyContact($contact_id){
+        $contact =Contact::where('id', $contact_id)->delete();
+        $contact = Contact::all();
+        return view('admin.adminContact')->with(compact('contact'));
+
+    }
+
 
 
 }

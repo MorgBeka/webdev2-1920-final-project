@@ -61,3 +61,7 @@ Route::post('/admin/privacy/save', 'AdminController@newsSave')->name('privacySav
 Route::get('/admin/privacy/edit/{privacy_id}', 'AdminController@privacyEdit')->name('privacyEdit');
 Route::patch('/admin/privacy/update/{privacy_id}', 'AdminController@privacyUpdate')->name('privacyUpdate');
 Route::get('/admin/privacy/delete/{privacy_id}', 'AdminController@privacyDelete')->name('privacyDelete');
+
+//contact -- admin
+Route::get('/admin/contact', 'AdminController@contact')->name('adminContact');
+Route::get('/admin/privacy/delete/{privacy_id}', 'AdminController@privacyDelete')->name('privacyDelete');

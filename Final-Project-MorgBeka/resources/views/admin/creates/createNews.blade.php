@@ -8,6 +8,8 @@
 
     <textarea type="text" name="content"  placeholder="Inhoud"></textarea>
 
+    <input type="file" name="file[]" id="file">
+
 
     <button type="submit">
         {{ __('SAVE') }}

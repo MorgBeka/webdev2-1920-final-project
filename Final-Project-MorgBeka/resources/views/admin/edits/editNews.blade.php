@@ -10,6 +10,8 @@
 
     <textarea type="text" name="content"  placeholder="Inhoud">{{$news->content}}</textarea>
 
+    <input type="file" name="file[]" id="file">
+
     {{-- <input type="file" name="file[]" id="file"> --}}
 
     <button type="submit">

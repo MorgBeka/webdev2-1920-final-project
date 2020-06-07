@@ -16,7 +16,8 @@ class NewsSeeder extends Seeder
             [
                 'id'=> '1',
                 'title' =>'Zomer in het land!',
-                'summary' => 'Zomer in het land! Geen zin om achter die warme kookpotten te staan bij zo’n stralend weer? Wij hebben de ideale oplossing! Doorheen de zomer zorgen wij wekelijks voor recepten van heerlijke slaatjes, koude pasta’s,… Gezond & fris! '
+                'summary' => 'Zomer in het land! Geen zin om achter die warme kookpotten te staan bij zo’n stralend weer? Wij hebben de ideale oplossing! Doorheen de zomer zorgen wij wekelijks voor recepten van heerlijke slaatjes, koude pasta’s,… Gezond & fris! ',
+                'content'=> 'test'
             ],
 
             [

@@ -18,16 +18,14 @@
                         @if ($text->content)
                             <a href="{{ route('NewsDetail', $text->id) }}"  class="linkDetail"> Lees meer </a>
                         @endif
-
                     </div>
+
+                 @if($text->imageTitle)
+                    <div class="img_box">
+                        <img class="img" src=" {{ asset( $text->imagePath . '/' . $text->imageTitle) }} " >
+                    </div>
+                @endif
             </div>
-
-            @if($text->imageTitle)
-                <img class="img" src=" {{ asset( $text->imagePath . '/' . $text->imageTitle) }} " >
-            @endif
-
-
-        </div>
     @endforeach
 
 </div>

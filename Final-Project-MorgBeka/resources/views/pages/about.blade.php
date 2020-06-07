@@ -12,7 +12,7 @@
         <div class="m_element">
                 <div class="a_element">
                     <h1 class="a_element__title">{{$text->title}}</h1><br>
-                    {{$text->summary}}<br>
+                    <p  class="a_element__summary">{{$text->summary}}<br></p>
 
                                      {{-- check of er content is --}}
                 @if ($text->content)
@@ -21,11 +21,10 @@
                 </div>
 
             @if($text->imageTitle)
-                <img src=" {{ asset( $text->imagePath . '/' . $text->imageTitle) }} " >
+                <div class="img_box">
+                    <img class="img" src=" {{ asset( $text->imagePath . '/' . $text->imageTitle) }} " >
+                </div>
             @endif
-
-
-
         </div>
     @endforeach
 

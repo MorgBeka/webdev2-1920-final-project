@@ -1,5 +1,62 @@
+.m-link{
+    display: flex;
+    flex-direction: column;
 
-.element{
-    background-color: $helloFresh;
+
 }
 
+.a-link{
+    margin: 20px;
+    border: $helloFresh solid 1px ;
+    width: 80px;
+    padding: 5px;
+    text-align: center;
+}
+
+.card-header{
+    font-family: $font-family-avenir;
+    margin: 10px;
+}
+
+.header{
+
+    margin-top: 50px;
+    background-color: $lightGreen;
+    padding: 10px;
+    color: $grey;
+
+    &__title{
+        font-family: $font-family-avenir;
+        margin-top: 20px;
+        width: 20px;
+        padding: 10px;
+    }
+
+}
+
+.create{
+    border: $helloFresh solid 1px;
+    padding: 5px;
+    margin: 10px;
+
+}
+
+.adminTable{
+    width: 100%;
+    font-family: $font-family-avenir;
+
+}
+
+
+.button{
+    border: $helloFresh solid 1px ;
+    text-align: center;
+    margin-left: 20px;
+    padding: 5px;
+}
+
+td{
+    border-bottom: $grey solid 1px ;
+
+
+}
