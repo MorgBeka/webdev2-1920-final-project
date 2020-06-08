@@ -75,12 +75,6 @@ h6 {
   margin-left: 20px;
 }
 
-.home {
-  background-color: #F6FCED;
-  height: 100vh;
-  width: 100%;
-}
-
 .title {
   color: #A69F94;
   font-family: "avenir";
@@ -88,7 +82,38 @@ h6 {
   text-transform: uppercase;
   font-size: 80px;
   text-align: center;
-  padding-top: 30px;
+}
+
+.img-box-pages {
+  width: 500px;
+  height: 300px;
+  margin-left: 20px;
+}
+
+.img-box-pages__contact {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-left: 90px;
+}
+
+.a-home {
+  height: 100vh;
+  width: 100%;
+  background-image: url(/images/background.jpg?236e3903f39df58b615dbcd01f7122e6);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.a-home__title {
+  color: #A69F94;
+  font-family: "avenir";
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 80px;
+  text-align: center;
+  padding-top: 230px;
 }
 
 .subtitle {
@@ -125,6 +150,7 @@ h6 {
 
 .form {
   margin-top: 55px;
+  padding-bottom: 100px;
 }
 
 label {
@@ -139,10 +165,51 @@ input {
   height: 20px;
 }
 
-.submit {
-  background-color: #F6FCED;
+input .submit {
+  border: #9DBF21 solid 1px;
+  padding: 5px;
   text-transform: uppercase;
   width: 350px;
+}
+
+.m-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.img_newsletter {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-left: 90px;
+}
+
+.container_privacy {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.img-box-pages__privacy {
+  width: 50%;
+  height: 50%;
+  margin-left: 300px;
+  padding-bottom: 50px;
+}
+
+.a-privacy__title {
+  color: #A69F94;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: "avenir";
+}
+
+.a-privacy__content {
+  color: #A69F94;
+  text-align: center;
+  font-family: "avenir";
+  line-height: 30px;
 }
 
 .float-right {
@@ -168,6 +235,23 @@ a {
   color: #A69F94;
   font-family: "avenir";
   text-transform: uppercase;
+}
+
+.img_navigation {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.logo {
+  width: 100px;
+  height: 40px;
+  padding-left: 100px;
+}
+
+.topbar {
+  height: 30px;
 }
 
 .m-link {

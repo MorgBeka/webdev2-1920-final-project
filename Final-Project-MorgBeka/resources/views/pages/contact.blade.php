@@ -19,8 +19,15 @@
                     <h4>CONTACT</h4>
                 </div>
 
-                <div class="text">
-                    <p>Heeft u een vraag of een opmerking? Laat het ons hier weten! </p>
+
+
+                <div class="m-container">
+                    <div class="text">
+                        <p>Heeft u een vraag of een opmerking? Laat het ons hier weten! </p>
+                    </div>
+                <div class="img-box-pages">
+                    <img  class="img-box-pages__contact" src="{{ asset('../images/contact.jpg')}}">
+                </div>
                 </div>
 
                 <form class="form" method="POST" action="{{ route('saveContact') }}">
@@ -32,7 +39,9 @@
                     <label classname="form__label" for="message">Bericht</label><br>
                     <textarea type="text" id="message" name="message" rows="4" cols="45"></textarea><br><br>
 
-                    <input classname="submit" type="submit" value="Verzend">
+                    <input classname="submit" type="submit" value="VERZEND" style="background-color: #9DBF21; color: #F1F1F1; border: none; height: 30px" >
+
+
                 </form>
     </div>
 </body>

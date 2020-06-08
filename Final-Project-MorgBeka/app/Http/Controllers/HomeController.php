@@ -28,7 +28,7 @@ class HomeController extends Controller
 
     public function getIndex() {
         $title = 'Hello Fresh';
-        $subtitle = 'Nu verkrijgbaar in de app store';
+        $subtitle = 'Nu verkrijgbaar in de app store!';
 
         return view('pages.home', [
             'title' => $title,

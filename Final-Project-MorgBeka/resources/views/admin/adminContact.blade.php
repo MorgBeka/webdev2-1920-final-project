@@ -21,9 +21,9 @@
 
 <table class="adminTable">
     <tr class="header">
-        <th class="header__title">TITEL</th>
-        <th class="header__title">SUMMARY</th>
-        <th class="header__title">CONTENT</th>
+        <th class="header__title">E-MAIL</th>
+        <th class="header__title">SUBJECT</th>
+        <th class="header__title">MESSAGE</th>
         <th class="header__title">ANSWER</th>
         <th class="header__title">DELETE</th>
     </tr>
@@ -32,11 +32,11 @@
 
     @foreach($contact as $index)
     <tr>
-        <td>{{$index->title}}</td>
-        <td>{{$index->summary}}</td>
-        <td class="contentTable">{{$index->content}}</td>
-        <td><a class="button">Edit</a></td>
-        <td><a class="button"  href="{{ route('contactDelete', $index->id)}}">Delete</a></td>
+        <td>{{$index->name}}</td>
+        <td>{{$index->subject}}</td>
+        <td class="contentTable">{{$index->message}}</td>
+        <td><a class="button">Answer</a></td>
+      {{-- <td><a class="button"  href="{{ route('contactDelete', $index->id)}}">Delete</a></td>  --}}
     </tr>
 
     @endforeach

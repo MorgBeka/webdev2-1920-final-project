@@ -19,9 +19,15 @@
                     <h4>{{ $title }}</h4>
                 </div>
 
-                <div class="text">
-                    <p>{{ $text }}</p>
+                <div class="m-container">
+                    <div class="text">
+                        <p>{{ $text }}</p>
+                    </div>
+                <div class="img_box">
+                    <img  class="img_newsletter" src="{{ asset('../images/newsletter.jpg')}}">
                 </div>
+                </div>
+
 
                 <form class="form">
                     <label classname="form__label" for="firstName">Voornaam</label><br>
@@ -31,8 +37,11 @@
                     <label classname="form__label" for="email">E-mailadres</label><br>
                     <input type="text" id="email" name="email"><br><br>
 
-                    <input classname="submit" type="submit" value="Schrijf in">
+                    <input classname="submit" type="submit" value="SCHRIJF IN" style="background-color: #9DBF21; color: #F1F1F1; border: none; height: 30px ">
                   </form>
+
+
+
     </div>
 </body>
 </html>

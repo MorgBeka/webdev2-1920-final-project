@@ -19,12 +19,16 @@
                 <li role="menuitem"><a href="{{route('about') }}">Over</a></li>
                 <li role="menuitem"><a href="{{route('newsletter') }}">Nieuwsbrief</a></li>
                 <li role="menuitem"><a href="{{route('donation') }}">Donatie</a></li>
-                <li role="menuitem"><a >afbeelding</a></li>
+                <div class="logo">
+                    <img  href="{{route('home') }}" class="img_navigation" src="{{ asset('../images/logo_hellofresh.png')}}">
+                </div>
                 <li role="menuitem"><a href="{{route('news') }}">Nieuws</a></li>
                 <li role="menuitem"><a href="{{route('contact') }}">Contact</a></li>
                 <li role="menuitem"><a href="{{route('privacy') }}">Privacy</a></li>
             </ul>
         </div>
+
+
     </div>
     @endif
 </body>

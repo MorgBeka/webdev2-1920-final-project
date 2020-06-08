@@ -14,6 +14,12 @@
     </div>
 {{-- $about komt van de controller (compact())--}}
 
+@if($news->imageTitle)
+                    <div class="img_box">
+                        <img class="img" src=" {{ asset( $news->imagePath . '/' . $news->imageTitle) }} " >
+                    </div>
+ @endif
+
 
 <a href="{{ route('news') }}"  class="back">Terug naar het overzicht</a>
 

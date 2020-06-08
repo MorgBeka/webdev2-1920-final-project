@@ -16,7 +16,8 @@ class AboutSeeder extends Seeder
             [
                 'id'=> '1',
                 'title' =>'Applicatie Hello Fresh',
-                'summary' => 'Vanaf nu is Hello Fresh ook beschikbaar in de AppStore of PlayStore. Een heel handige applicatie waar je je weekmenu kan samenstellen. Geen fan om te koken met alle papiertjes van Hello Fresh? Gebruik dan de app om je recept weer te geven.  Ook kan je gebruik maken van andere recepten. Kortom een gebruiksvriendelijke app waar je alles ineen hebt! '
+                'summary' => 'Vanaf nu is Hello Fresh ook beschikbaar in de AppStore of PlayStore. Een heel handige applicatie waar je je weekmenu kan samenstellen. Geen fan om te koken met alle papiertjes van Hello Fresh? Gebruik dan de app om je recept weer te geven.  Ook kan je gebruik maken van andere recepten. Kortom een gebruiksvriendelijke app waar je alles ineen hebt! ',
+
             ],
 
             [

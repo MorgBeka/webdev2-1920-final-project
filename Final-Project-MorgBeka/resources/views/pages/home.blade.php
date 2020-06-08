@@ -2,16 +2,16 @@
 
 @section('content')
 
-<div class="home">
-        <div class="head">
-            <div class="title">
+<div class="a-home">
+        <div class="m-head">
+            <div class="a-home__title">
                 {{ $title }}
             </div>
             <div class="subtitle">
                 {!! $subtitle !!}
             </div>
 
-            {{-- {{ asset('/asperge.png') }} --}}
+
 
         </div>
 </div>
