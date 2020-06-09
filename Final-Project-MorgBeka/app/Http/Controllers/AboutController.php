@@ -15,7 +15,7 @@ class AboutController extends Controller
 
     public function index()
     {
-        $about = About::all();
+        $about = About::orderBy('id', 'asc')->paginate(3);
         return view('pages.about')->with(compact('about'));
 
     }

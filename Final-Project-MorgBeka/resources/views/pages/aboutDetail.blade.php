@@ -9,8 +9,16 @@
         <h6>{{$about->title}}</h6>
     </div>
 
-    <div class="detailContent">
-        {{$about->content}}
+    <div class="containerDetail">
+        @if($about->imageTitle)
+                        <div class="img_box">
+                            <img class="img" src=" {{ asset( $about->imagePath . '/' . $about->imageTitle) }} " >
+                        </div>
+        @endif
+
+        <div class="detailContent">
+            {{$about->content}}
+        </div>
     </div>
 {{-- $about komt van de controller (compact())--}}
 

@@ -16,12 +16,13 @@
 
     <div class="pages">
                 <div class="titleNewsletter">
-                    <h4>{{ $title }}</h4>
+                    <h4>Nieuwsbrief</h4>
                 </div>
 
                 <div class="m-container">
                     <div class="text">
-                        <p>{{ $text }}</p>
+                        <p>Wilt u maandelijks op de hoogte gebracht worden over alle verschillende acties van Hello Fresh maar ook over seizoensgebonden gerechten?
+                            Schrijf je dan nu in voor onze nieuwsbrief!</p>
                     </div>
                 <div class="img_box">
                     <img  class="img_newsletter" src="{{ asset('../images/newsletter.jpg')}}">
@@ -29,11 +30,8 @@
                 </div>
 
 
-                <form class="form">
-                    <label classname="form__label" for="firstName">Voornaam</label><br>
-                    <input type="text" id="firstName" name="firstName"><br><br>
-                    <label classname="form__label" for="lastName">Achternaam</label><br>
-                    <input type="text" id="lastName" name="lastName"><br><br>
+                <form class="form" method="post" action="">
+                   @csrf
                     <label classname="form__label" for="email">E-mailadres</label><br>
                     <input type="text" id="email" name="email"><br><br>
 

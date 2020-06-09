@@ -1,10 +1,8 @@
 <h1>Create Privacy</h1>
 
-<form class="" method="POST" action={{ route('privacySave') }}>
+<form class="" method="POST" action={{ route('privacySave') }} enctype="multipart/form-data">
 @csrf
     <input type="text" name="title" placeholder="Titel">
-
-    <textarea type="text" name="summary"  placeholder="Samenvatting"></textarea>
 
     <textarea type="text" name="content"  placeholder="Inhoud"></textarea>
 

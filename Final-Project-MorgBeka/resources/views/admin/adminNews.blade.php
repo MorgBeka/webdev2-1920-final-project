@@ -17,7 +17,7 @@
 </div>
 
 <h1 class="title">Admin table - News</h1>
-<a class="create" href="{{ route('aboutCreate')}}">Maak een nieuw artikel</a>
+<a class="create" href="{{ route('newsCreate')}}">Maak een nieuw artikel</a>
 
 <table class="adminTable">
     <tr class="header">

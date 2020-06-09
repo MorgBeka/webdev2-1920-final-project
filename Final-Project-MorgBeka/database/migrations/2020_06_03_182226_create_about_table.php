@@ -17,7 +17,7 @@ class CreateAboutTable extends Migration
             $table->id();
 
             $table->string('title');
-            $table->text('content')->nullable();
+            $table->text('content');
             $table->string('imageTitle')->nullable();
             $table->string('imagePath')->nullable();
             $table->text('summary');

@@ -1,6 +1,6 @@
 <h1>Create News</h1>
 
-<form class="" method="POST" action={{ route('newsSave') }}>
+<form class="" method="POST" action={{ route('newsSave') }}  enctype="multipart/form-data">
 @csrf
     <input type="text" name="title" placeholder="Titel">
 

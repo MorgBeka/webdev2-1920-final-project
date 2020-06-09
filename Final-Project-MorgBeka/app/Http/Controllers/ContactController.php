@@ -8,29 +8,20 @@ use Illuminate\Http\Request;
 class ContactController extends Controller
 {
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-       // $this->middleware('auth');
-    }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function index()
+     public function index()
     {
         return view('pages.contact');
     }
 
+// Mail
 
 
-    public function save(Request $request){
+
+
+
+//Save database
+
+  public function save(Request $request){
         \request()->validate([
             'email' => 'required',
             'subject' => 'required',

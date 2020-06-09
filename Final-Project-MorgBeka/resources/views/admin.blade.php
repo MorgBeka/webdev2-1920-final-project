@@ -24,6 +24,7 @@
                     <a class="a-link" href="/admin/news">News</a>
                     <a class="a-link" href="/admin/privacy">Privacy</a>
                     <a class="a-link" href="/admin/contact">Contact</a>
+                    <a class="a-link" href="/">Website</a>
                 </div>
 
                 </div>

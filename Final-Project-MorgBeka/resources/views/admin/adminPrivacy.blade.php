@@ -17,7 +17,7 @@
 </div>
 
 <h1 class="title">Admin table - Privacy</h1>
-<a class="create" href="{{ route('aboutCreate')}}">Create</a>
+<a class="create" href="{{ route('privacyCreate')}}">Create</a>
 
 <table  class="adminTable">
     <tr class="header">
@@ -33,8 +33,8 @@
     <tr>
         <td>{{$index->title}}</td>
         <td class="contentTable">{{$index->content}}</td>
-        <td><a class="button" href="{{ route('aboutEdit', $index->id)}}">Edit</a></td>
-        <td><a class="button" href="{{ route('aboutDelete', $index->id)}}">Delete</a></td>
+        <td><a class="button" href="{{ route('privacyEdit', $index->id)}}">Edit</a></td>
+        <td><a class="button" href="{{ route('privacyDelete', $index->id)}}">Delete</a></td>
     </tr>
 
 

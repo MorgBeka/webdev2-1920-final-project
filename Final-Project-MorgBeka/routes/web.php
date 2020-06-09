@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DonationController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -14,26 +15,40 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//Home
 Route::get('/', 'HomeController@getIndex')->name('home');
 
+//About
 Route::get('/about', 'AboutController@index')->name('about');
 Route::get('/about/detail/{about_id}', 'AboutController@detail')->name('AboutDetail');
 
+//News
 Route::get('/news', 'NewsController@index')->name('news');
 Route::get('/news/detail/{news_id}', 'NewsController@detail')->name('NewsDetail');
 
+
+//Donation
 Route::get('/donation', 'DonationController@getIndex')->name('donation');
 
-
+//Newsletter
 Route::get('/newsletter', 'NewsletterController@getIndex')->name('newsletter');
+Route::post('/newsletter', 'NewsletterController@postNewsletter')->name('newsletter.save');
 
+//Contact
 Route::get('/contact', 'ContactController@index')->name('contact');
 Route::post('/contact/save', 'ContactController@save')->name('saveContact');
 
+//Mail
+Route::get('/mail', 'MailController@getContact')->name('mail');
+Route::post('/mail', 'MailController@postContact')->name('mail.save');
+
+
+//Privacy
 Route::get('/privacy', 'PrivacyController@index')->name('privacy');
 
 
 Auth::routes();
+
 
 //admin-paneel
 Route::get('/admin', 'HomeController@admin')->name('admin');
@@ -65,3 +80,12 @@ Route::get('/admin/privacy/delete/{privacy_id}', 'AdminController@privacyDelete'
 //contact -- admin
 Route::get('/admin/contact', 'AdminController@contact')->name('adminContact');
 Route::get('/admin/privacy/delete/{privacy_id}', 'AdminController@privacyDelete')->name('privacyDelete');
+
+
+//Donation
+
+// Route::prefix('donatie')->as('shop.')->group(function(){
+//         Route::get('/', 'DonationController@getIndex')->name('index');
+// });
+
+

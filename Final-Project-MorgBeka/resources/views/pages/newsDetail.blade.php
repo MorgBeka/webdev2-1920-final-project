@@ -9,17 +9,19 @@
         <h6>{{$news->title}}</h6>
     </div>
 
-    <div class="detailContent">
-        {{$news->content}}
+    <div class="containerDetail">
+        @if($news->imageTitle)
+                        <div class="img_box">
+                            <img class="img" src=" {{ asset( $news->imagePath . '/' . $news->imageTitle) }} " >
+                        </div>
+        @endif
+
+        <div class="detailContent">
+            {{$news->content}}
+        </div>
     </div>
+
 {{-- $about komt van de controller (compact())--}}
-
-@if($news->imageTitle)
-                    <div class="img_box">
-                        <img class="img" src=" {{ asset( $news->imagePath . '/' . $news->imageTitle) }} " >
-                    </div>
- @endif
-
 
 <a href="{{ route('news') }}"  class="back">Terug naar het overzicht</a>
 

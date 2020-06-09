@@ -31,17 +31,12 @@ class AdminController extends Controller
             'file.*'=> 'image|mimes:jpeg,png,gif,svg,jpg|',
         ];
 
-
-
         \request()->validate([
             'content' => 'required',
             'summary' => 'required',
         ]);
 
-
-
         $validator=Validator::make($request->all(), $rules);
-
 
         if($validator->fails()) {
             return Redirect::back()
@@ -68,17 +63,11 @@ class AdminController extends Controller
 
                 $this->storeImageToDatabase($request->title, $request->content, $request->summary, $filename, 'storage'.$directory);
 
+                //$about = About::all();
+                //return view('admin.adminAbout')->with(compact('about'));
 
-                $about = About::all();
-                return view('admin.adminAbout')->with(compact('about'));
             }
-
-            return back()->with([
-                'notification' => 'succes',
-                'message'=>"het uploaden is succesvolgeladen"
-            ]);
-
-
+            return Redirect::to('/admin/about');
         }
     }
 
@@ -92,22 +81,16 @@ class AdminController extends Controller
         $image->summary= $summary;
 
         $image->save();
-
-
     }
-
 
     public function aboutEdit($about_id){
         $about = About::where('id', $about_id)->first();
 
         return view('admin.edits.editAbout')->with(compact('about'));
 
-
-
     }
 
     public function aboutUpdate($about_id, Request $request){
-
 
         $about = About::where('id', $about_id)->first();
 
@@ -123,8 +106,6 @@ class AdminController extends Controller
 
         $validator=Validator::make($request->all(), $rules);
 
-
-
         if($validator->fails()) {
             return Redirect::back()
             ->withInput()
@@ -137,8 +118,6 @@ class AdminController extends Controller
             );
         }
 
-
-
         if($request->hasFile('file')) {
             // folder van de afbeeldingen
 
@@ -149,17 +128,13 @@ class AdminController extends Controller
                 $extension = $image->getClientOriginalExtension();
                 $filename = pathinfo($name, PATHINFO_FILENAME).'-'.uniqid(5).'.'.$extension;
                 $image->storeAs($directory, $filename, 'public');
-
                 $this->updateImageToDatabase($about, $request->title, $request->content, $request->summary, $filename, 'storage'.$directory);
 
-                $about = About::all();
-                return view('admin.adminAbout')->with(compact('about'));
+
             }
         }
-
-        $about = About::all();
-
-        return view('admin.adminAbout')->with(compact('about'));
+        //return view('admin.adminAbout')->with(compact('about'));
+        return Redirect::to('/admin/about');
 
     }
 
@@ -174,18 +149,15 @@ class AdminController extends Controller
         $about->summary= $summary;
 
         $about->update();
-
-
     }
-
 
     public function aboutDelete($about_id){
         $about =About::where('id', $about_id)->delete();
-        $about = About::all();
-        return view('admin.adminAbout')->with(compact('about'));
+
+        return Redirect::to('/admin/about');
+
 
     }
-
 
     // news
 
@@ -200,21 +172,58 @@ class AdminController extends Controller
 
     public function newsSave(Request $request){
 
+        $rules= [
+            'file'=>'required',
+            'file.*'=> 'image|mimes:jpeg,png,gif,svg,jpg|',
+        ];
+
         \request()->validate([
             'content' => 'required',
             'summary' => 'required',
         ]);
 
-        $data = [
-            'title' => request('title'),
-            'content' => request('content'),
-            'summary' => request('summary'),
-        ];
+        $validator=Validator::make($request->all(), $rules);
 
-        News::create($data);
+        if($validator->fails()) {
+            return Redirect::back()
+            ->withInput()
+            ->withErrors($validator)
+            ->with(
+                [
+                    'notification'=>'succes',
+                    'message'=>'Er ging iets mis'
+                ]
+            );
+        }
 
-        $news = News::all();
-        return view('pages.news')->with(compact('news'));
+        if($request->hasFile('file')) {
+            // folder van de afbeeldingen
+            $directory = '/images';
+
+            foreach($request->file('file') as $image) {
+                $name = $image->getClientOriginalName();
+                $extension = $image->getClientOriginalExtension();
+                $filename = pathinfo($name, PATHINFO_FILENAME).'-'.uniqid(5).'.'.$extension;
+                $image->storeAs($directory, $filename, 'public');
+
+                $this->storeNewsToDatabase($request->title, $request->content, $request->summary, $filename, 'storage'.$directory);
+
+            }
+            return Redirect::to('/admin/news');
+
+        }
+    }
+
+    private function storeNewsToDatabase($title, $content, $summary, $filename, $filepath) {
+        $image = new News();
+        $image->imageTitle = $filename;
+        $image->imagePath = $filepath;
+
+        $image->title= $title;
+        $image->content= $content;
+        $image->summary= $summary;
+
+        $image->save();
     }
 
     public function newsEdit($news_id){
@@ -223,9 +232,12 @@ class AdminController extends Controller
         return view('admin.edits.editNews')->with(compact('news'));
     }
 
-
-    public function newsUpdate($news_id){
+    public function newsUpdate($news_id, Request $request){
         $news = News::where('id', $news_id)->first();
+
+        $rules= [
+            'file.*'=> 'image|mimes:jpeg,png,gif,svg,jpg|',
+        ];
 
         $data = [
             'title' => request('title'),
@@ -233,16 +245,55 @@ class AdminController extends Controller
             'summary' => request('summary'),
         ];
 
-        $news->update($data);
-        $news = News::all();
+        $validator=Validator::make($request->all(), $rules);
 
-        return view('admin.adminNews')->with(compact('news'));
+        if($validator->fails()) {
+            return Redirect::back()
+            ->withInput()
+            ->withErrors($validator)
+            ->with(
+                [
+                    'notification'=>'succes',
+                    'message'=>'Er ging iets mis'
+                ]
+            );
+        }
+
+        if($request->hasFile('file')) {
+            // folder van de afbeeldingen
+
+            $directory = '/images';
+
+            foreach($request->file('file') as $image) {
+                $name = $image->getClientOriginalName();
+                $extension = $image->getClientOriginalExtension();
+                $filename = pathinfo($name, PATHINFO_FILENAME).'-'.uniqid(5).'.'.$extension;
+                $image->storeAs($directory, $filename, 'public');
+                $this->updateNewsToDatabase($news, $request->title, $request->content, $request->summary, $filename, 'storage'.$directory);
+
+
+            }
+        }
+        return Redirect::to('/admin/news');
+    }
+
+    private function updateNewsToDatabase($news, $title, $content, $summary, $filename, $filepath) {
+        $news->imageTitle = $filename;
+        $news->imagePath = $filepath;
+
+        $news->title= $title;
+        $news->content= $content;
+        $news->summary= $summary;
+
+        $news->update();
     }
 
     public function newsDelete($news_id){
         $news =News::where('id', $news_id)->delete();
-        $news = News::all();
-        return view('admin.adminNews')->with(compact('news'));
+        // $news = News::all();
+        // return view('admin.adminNews')->with(compact('news'));
+        return Redirect::to('/admin/news');
+
     }
 
 
@@ -258,22 +309,46 @@ class AdminController extends Controller
     }
 
     public function privacySave(Request $request){
-        \request()->validate([
-            'content' => 'required',
-            'summary' => 'required',
-        ]);
 
-        $data = [
-            'title' => request('title'),
-            'content' => request('content'),
-            'summary' => request('summary'),
+        $rules= [
+            'file'=>'required',
+            'file.*'=> 'image|mimes:jpeg,png,gif,svg,jpg|',
         ];
 
+        \request()->validate([
+            'title' => 'required',
+            'content' => 'required',
+        ]);
 
-        Privacy::create($data);
+        $validator=Validator::make($request->all(), $rules);
 
-        $privacy = Privacy::all();
-        return view('pages.privacy')->with(compact('privacy'));
+        if($validator->fails()) {
+            return Redirect::back()
+            ->withInput()
+            ->withErrors($validator)
+            ->with(
+                [
+                    'notification'=>'succes',
+                    'message'=>'Er ging iets mis'
+                ]
+            );
+        }
+
+        if($request->hasFile('file')) {
+            // folder van de afbeeldingen
+
+            $directory = '/images';
+
+            foreach($request->file('file') as $image) {
+                $name = $image->getClientOriginalName();
+                $extension = $image->getClientOriginalExtension();
+                $filename = pathinfo($name, PATHINFO_FILENAME).'-'.uniqid(5).'.'.$extension;
+                $image->storeAs($directory, $filename, 'public');
+
+                $this->storeImageToDatabase($request->title, $request->content, $request->summary, $filename, 'storage'.$directory);
+            }
+            return Redirect::to('/admin/privacy');
+        }
 
     }
 
@@ -285,27 +360,54 @@ class AdminController extends Controller
 
     }
 
-    public function privacyUpdate($privacy_id){
+    public function privacyUpdate($privacy_id, Request $request){
         $privacy = Privacy::where('id', $privacy_id)->first();
+
+        $rules= [
+            'file.*'=> 'image|mimes:jpeg,png,gif,svg,jpg|',
+        ];
 
         $data = [
             'title' => request('title'),
             'content' => request('content'),
-            'summary' => request('summary'),
         ];
 
-        $privacy->update($data);
-        $privacy = Privacy::all();
+        $validator=Validator::make($request->all(), $rules);
 
-        return view('admin.adminPrivacy')->with(compact('privacy'));
+        if($validator->fails()) {
+            return Redirect::back()
+            ->withInput()
+            ->withErrors($validator)
+            ->with(
+                [
+                    'notification'=>'succes',
+                    'message'=>'Er ging iets mis'
+                ]
+            );
+        }
+
+        if($request->hasFile('file')) {
+            // folder van de afbeeldingen
+
+            $directory = '/images';
+
+            foreach($request->file('file') as $image) {
+                $name = $image->getClientOriginalName();
+                $extension = $image->getClientOriginalExtension();
+                $filename = pathinfo($name, PATHINFO_FILENAME).'-'.uniqid(5).'.'.$extension;
+                $image->storeAs($directory, $filename, 'public');
+                $this->updateImageToDatabase($privacy, $request->title, $request->content, $request->summary, $filename, 'storage'.$directory);
+
+
+            }
+        }
+        return Redirect::to('/admin/privacy');
 
     }
 
     public function privacyDelete($privacy_id){
         $privacy =Privacy::where('id', $privacy_id)->delete();
-        $privacy = Privacy::all();
-        return view('admin.adminPrivacy')->with(compact('privacy'));
-
+        return Redirect::to('/admin/privacy');
     }
 
 

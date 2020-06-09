@@ -5,7 +5,7 @@
 <div class="pages">
 
     <div class="title">
-        <h4>NEWS</h4>
+        <h4>NIEUWS</h4>
     </div>
 
     @foreach($news as $text)
@@ -14,7 +14,6 @@
                         <h1 class="a_element__title">{{$text->title}}</h1><br>
                         {{$text->summary}}<br>
 
-                                           {{-- check of er content is --}}
                         @if ($text->content)
                             <a href="{{ route('NewsDetail', $text->id) }}"  class="linkDetail"> Lees meer </a>
                         @endif
@@ -27,6 +26,6 @@
                 @endif
             </div>
     @endforeach
-
+            {{ $news->links()}}
 </div>
 @endsection
