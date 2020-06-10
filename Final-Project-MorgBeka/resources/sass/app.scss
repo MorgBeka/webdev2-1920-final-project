@@ -19,3 +19,71 @@
 // Bootstrap
 /* @import '~bootstrap/scss/bootstrap';
  */
+
+ //algemeen
+
+ //titel
+h4{
+    margin: 0px;
+    margin-bottom: 20px;
+}
+
+.title{
+    color: #A69F94;
+    font-family: $font-family-avenir;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 80px;
+    text-align: center;
+}
+
+ .title2{
+    color: #A69F94;
+    font-family: $font-family-avenir;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 50px;
+}
+
+
+
+.text{
+    background-color: $lightGreen;
+    width: 450px;
+    height: 150px;
+    font-family: $font-family-avenir;
+    padding: 15px;
+    color: $grey;
+    box-shadow: 0px 10px 8px -2px rgba(235,235,235,0.66);
+}
+
+.pagination{
+    list-style-type: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+        li{
+            padding: 0 10px;
+        }
+}
+
+
+.pages{
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 50px;
+}
+
+ body{
+     height: 100vh;
+     margin: 0;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+ }
+
+ .content{
+     height: fit-content;
+
+ }

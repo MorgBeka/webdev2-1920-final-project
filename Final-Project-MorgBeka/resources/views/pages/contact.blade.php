@@ -15,11 +15,9 @@
 <body>
 
     <div class="pages">
-                <div class="titleNewsletter">
+                <div class="title2">
                     <h4>CONTACT</h4>
                 </div>
-
-
 
                 <div class="m-container">
                     <div class="text">
@@ -29,8 +27,8 @@
                     <img  class="img-box-pages__contact" src="{{ asset('../images/contact.jpg')}}">
                 </div>
                 </div>
-
-                <form class="form" method="POST" action="{{ route('saveContact') }}">
+                {{-- //opslaan database -> bij action "{{ route('saveContact') }}" --}}
+                <form class="form" method="post" action="">
                     @csrf
                     <label classname="form__label" for="email">E-mailadres</label><br>
                     <input type="text" id="email" name="email"><br><br>

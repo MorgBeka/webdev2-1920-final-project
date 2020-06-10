@@ -19,9 +19,8 @@ class CreateDonationsTable extends Migration
             $table->string('firstName');
             $table->string('lastName');
             $table->string('email');
-            $table->string('total');
-            $table->string('collected');
-            $table->string('info');
+            $table->string('amount');
+         
 
             $table->timestamps();
         });

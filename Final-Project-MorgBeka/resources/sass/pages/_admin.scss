@@ -1,8 +1,7 @@
+//header admin
 .m-link{
     display: flex;
     flex-direction: column;
-
-
 }
 
 .a-link{
@@ -34,6 +33,8 @@
 
 }
 
+
+//button create
 .create{
     border: $helloFresh solid 1px;
     padding: 5px;
@@ -41,13 +42,15 @@
 
 }
 
+//tables
+
 .adminTable{
     width: 100%;
     font-family: $font-family-avenir;
 
 }
 
-
+//button edit & delete
 .button{
     border: $helloFresh solid 1px ;
     text-align: center;
@@ -57,6 +60,4 @@
 
 td{
     border-bottom: $grey solid 1px ;
-
-
 }

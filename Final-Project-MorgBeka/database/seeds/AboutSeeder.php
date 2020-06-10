@@ -17,7 +17,7 @@ class AboutSeeder extends Seeder
                 'id'=> '1',
                 'title' =>'Applicatie Hello Fresh',
                 'summary' => 'Vanaf nu is Hello Fresh ook beschikbaar in de AppStore of PlayStore. Een heel handige applicatie waar je je weekmenu kan samenstellen. Geen fan om te koken met alle papiertjes van Hello Fresh? Gebruik dan de app om je recept weer te geven.  Ook kan je gebruik maken van andere recepten. Kortom een gebruiksvriendelijke app waar je alles ineen hebt! ',
-                'content' => 'Met het Hello Fresh team hebben we beslist om eenapplicatie te maken. Deze is te vinden in de AppStore of PlayStore. Het is een heel handige applicatie geworden waar je je weekmenu kan samenstellen. Je kan hier ook de ingrediënten & basisingrediënten, die je thuis moet hebben raadplegen. Ben je geen fan om te koken met alle papiertjes van Hello Fresh? Gebruik dan deze app om je recept te bekijken.  Ook kan je gebruik maken van andere recepten die je vroeger al eens hebt besteld. Kortom een gebruiksvriendelijke app waar je alles ineen hebt! Gratis te downloaden in de appStore & PlayStore!'
+                'content' => 'Met het Hello Fresh team hebben we beslist om een applicatie te maken. Deze is te vinden in de AppStore of PlayStore. Het is een heel handige applicatie geworden waar je je weekmenu kan samenstellen. Je kan hier ook de ingrediënten & basisingrediënten, die je thuis moet hebben raadplegen. Ben je geen fan om te koken met alle papiertjes van Hello Fresh? Gebruik dan deze app om je recept te bekijken.  Ook kan je gebruik maken van andere recepten die je vroeger al eens hebt besteld. Kortom een gebruiksvriendelijke app waar je alles ineen hebt! Gratis te downloaden in de appStore & PlayStore!'
 
             ],
 
@@ -30,7 +30,7 @@ class AboutSeeder extends Seeder
 
             [
                 'id'=> '3',
-                'title' =>'Eenvoudige recpeten',
+                'title' =>'Eenvoudige recepten',
                 'summary' => 'Wekelijks zorgen we ervoor dat er een eenvoudig receptje tussen zit, zo kunnen de kinderen wekelijks ook een maaltijd maken. ',
                 'content' => 'Charlotte vertelt over haar ervaring met Hello Fresh:
                 Doordat we elke week ook een eenvoudig receptje kunnen kiezen, kunnen onze kinderen wekelijks ook een maaltijd klaarmaken. Zo doen ze ervaring op in de keuken en kunnen ze met veel plezier hun eigen gerecht op eten! Dit zorgt ook voor quality time met het gezin! '

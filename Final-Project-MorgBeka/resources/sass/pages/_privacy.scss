@@ -1,19 +1,18 @@
 .container_privacy{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    flex-wrap: nowrap;
     margin-bottom: 20px;
 }
-
-
 
 .img-box-pages__privacy{
 
         width: 50%;
         height: 50%;
-        margin-left: 300px;
+        margin-left: 270px;
         padding-bottom: 50px;
     }
-
 
 .a-privacy{
 
@@ -30,6 +29,4 @@
         font-family: $font-family-avenir;
         line-height: 30px;
     }
-
-
 }

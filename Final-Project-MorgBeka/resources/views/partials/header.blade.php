@@ -14,7 +14,7 @@
 
       <div class="topbar">
         <div class="row">
-            <ul class="dropdown_menu" data-dropdown-menu="tckp8q-dropdown-menu"  role="menubar">
+            <ul class="navigation_menu" data-dropdown-menu="tckp8q-dropdown-menu"  role="menubar">
                 <li role="menuitem"><a href="{{route('about') }}">Over</a></li>
                 <li role="menuitem"><a href="{{route('newsletter') }}">Nieuwsbrief</a></li>
                 <li role="menuitem"><a href="{{route('donation') }}">Donatie</a></li>
@@ -35,7 +35,7 @@
 
     <div class="topbar">
         <div class="row">
-            <ul class="dropdown_menu" data-dropdown-menu="tckp8q-dropdown-menu"  role="menubar">
+            <ul class="navigation_menu" data-dropdown-menu="tckp8q-dropdown-menu"  role="menubar">
                 <li role="menuitem"><a href="{{route('about') }}">Over</a></li>
                 <li role="menuitem"><a href="{{route('newsletter') }}">Nieuwsbrief</a></li>
                 <li role="menuitem"><a href="{{route('donation') }}">Donatie</a></li>

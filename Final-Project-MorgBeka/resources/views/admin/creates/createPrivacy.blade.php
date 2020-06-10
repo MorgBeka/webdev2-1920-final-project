@@ -1,3 +1,5 @@
+@if(Auth::check())
+
 <h1>Create Privacy</h1>
 
 <form class="" method="POST" action={{ route('privacySave') }} enctype="multipart/form-data">
@@ -12,3 +14,4 @@
     </button>
 </form>
 
+@endif

@@ -10,14 +10,19 @@
     </div>
 
     <div class="containerDetail">
+
         @if($news->imageTitle)
                         <div class="img_box">
-                            <img class="img" src=" {{ asset( $news->imagePath . '/' . $news->imageTitle) }} " >
+                            <img class="imgDetail" src=" {{ asset( $news->imagePath . '/' . $news->imageTitle) }} " >
                         </div>
         @endif
 
         <div class="detailContent">
-            {{$news->content}}
+            <p class="intro">{{$news->summary}}</p>
+            <br>
+            <p>{{$news->content}}</p>
+
+
         </div>
     </div>
 

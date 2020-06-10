@@ -1,11 +1,56 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+<p align="center"><img src="https://static.hellofresh.com/images/hellofresh-logo.svg?v=3" width="400"></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+## Docs 
+ 
+### Na klonen volgende commando's uitvoeren:
+ 
+```
+composer install
+npm install
+```
+ 
+### Maak een .env-file aan, en vul volgende gegevens in:
+ 
+```
+APP_NAME=HelloFresh
+ 
+MAILCHIMP_APIKEY=
+MAILCHIMP_LIST_ID=
+ 
+MOLLIE_KEY=
+ 
+DB_CONNECTION=mysql
+DB_HOST=
+DB_PORT=
+DB_DATABASE=HelloFresh
+DB_USERNAME=
+DB_PASSWORD=
+ 
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.office365.com`
+MAIL_PORT=587`
+MAIL_USERNAME=`
+MAIL_PASSWORD=`
+MAIL_ENCRYPTION=tls`
+MAIL_FROM_ADDRESS=`
+MAIL_FROM_NAME="${APP_NAME}"
+```
+ 
+### Migreer de database
+ 
+`php artisan migrate`
+ 
+### Vul de database met data
+ 
+`php artisan db:seed`
+ 
+### Setup van ngrok tunnel voor gebruik van mollie:
+ 
+! plaats een ngrok-file in de root van het project !
+ 
+`./ngrok authtoken YOURTOKEN`
+ 
+`./ngrok http YOURLOCALHOST`
 
 ## About Laravel
 

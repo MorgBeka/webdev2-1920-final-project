@@ -1,3 +1,5 @@
+@if(Auth::check())
+
 <h1>Create News</h1>
 
 <form class="" method="POST" action={{ route('newsSave') }}  enctype="multipart/form-data">
@@ -16,3 +18,4 @@
     </button>
 </form>
 
+@endif

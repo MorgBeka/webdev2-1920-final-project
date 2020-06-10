@@ -1,3 +1,5 @@
+@if(Auth::check())
+
 <h1>Create About</h1>
 
 <form class="" method="POST" action={{ route('aboutSave') }} enctype="multipart/form-data">
@@ -18,3 +20,4 @@
     </button>
 </form>
 
+@endif

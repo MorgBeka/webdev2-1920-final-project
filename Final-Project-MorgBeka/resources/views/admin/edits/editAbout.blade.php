@@ -1,3 +1,5 @@
+@if(Auth::check())
+
 <h1>Create About</>
 
 <form class="" method="post" action={{ route('aboutUpdate', $about->id) }} enctype="multipart/form-data">
@@ -17,3 +19,4 @@
     </button>
 </form>
 
+@endif

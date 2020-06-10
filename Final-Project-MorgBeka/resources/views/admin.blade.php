@@ -20,7 +20,7 @@
                 <div class="m-link">
                     <a class="a-link" href="/admin/about">About</a>
                     {{-- <button href="/admin/about">Newsletter</button> --}}
-                    {{-- <button href="/admin/about">Donation</button> --}}
+                    <a class="a-link" href="/admin/about">Donation</a>
                     <a class="a-link" href="/admin/news">News</a>
                     <a class="a-link" href="/admin/privacy">Privacy</a>
                     <a class="a-link" href="/admin/contact">Contact</a>

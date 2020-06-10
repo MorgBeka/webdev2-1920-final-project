@@ -1,22 +1,9 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);h4 {
-  margin: 0px;
-  margin-bottom: 20px;
-}
-
-h6 {
-  margin: 0px;
-  margin-bottom: 20px;
-}
-
-.m_element {
+@import url(https://fonts.googleapis.com/css?family=Nunito);.m_element {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   height: auto;
   margin-bottom: 20px;
-}
-
-.titleArticle {
-  text-transform: uppercase;
 }
 
 .a_element {
@@ -26,7 +13,6 @@ h6 {
   width: 370px;
   height: auto;
   margin: 0;
-  margin-left: 150px;
   margin-top: 25px;
   padding: 15px;
   margin-bottom: 50px;
@@ -54,7 +40,8 @@ h6 {
   color: #A69F94;
   font-family: "avenir";
   width: 600px;
-  margin-left: 260px;
+  margin-left: 10px;
+  padding: 50px 20px;
 }
 
 .back {
@@ -64,7 +51,25 @@ h6 {
   margin-left: 20px;
 }
 
+.containerDetail {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+
+h6 {
+  margin: 0px;
+  margin-bottom: 20px;
+}
+
 .img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.imgDetail {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -74,16 +79,13 @@ h6 {
 .img_box {
   width: 300px;
   height: 300px;
-  margin-left: 20px;
+  margin-left: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
-.title {
-  color: #A69F94;
-  font-family: "avenir";
-  font-weight: 700;
+.titleArticle {
   text-transform: uppercase;
-  font-size: 80px;
-  text-align: center;
 }
 
 .img-box-pages {
@@ -100,12 +102,66 @@ h6 {
   margin-left: 90px;
 }
 
-.a-home {
+.m-title {
+  color: #A69F94;
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 50px;
+  font-family: "avenir";
+}
+
+.m-donation {
+  background-color: #F6FCED;
+  width: 280px;
+  height: auto;
+  font-family: "avenir";
+  padding: 15px;
+  color: #A69F94;
+  box-shadow: 0px 10px 8px -2px rgba(235, 235, 235, 0.66);
+  margin-bottom: 40px;
+  /*     &__p{
+          margin-bottom: 50px;
+          font-size: 20px;
+      } */
+}
+
+.m-donation__gift {
+  border: #9DBF21 solid 2px;
+  background-color: #9DBF21;
+  color: #FFFF;
+  font-size: 25px;
+  text-align: center;
+  padding: 5px 20px 5px 20px;
+  margin-left: 30px;
+}
+
+.img-box {
+  width: 300px;
+  height: 300px;
+  margin-left: 20px;
+}
+
+.img-box__donation {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.column {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  justify-content: space-evenly;
+}
+
+.o-home {
   height: 100vh;
   width: 100%;
   background-image: url(/images/background.jpg?236e3903f39df58b615dbcd01f7122e6);
   background-size: cover;
   background-attachment: fixed;
+  margin-top: 25px;
 }
 
 .a-home__title {
@@ -118,7 +174,7 @@ h6 {
   padding-top: 230px;
 }
 
-.subtitle {
+.a-home__subtitle {
   color: #A69F94;
   font-family: "avenir";
   font-weight: 200;
@@ -128,49 +184,17 @@ h6 {
   padding-top: 0px;
 }
 
-.containerDetail {
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 20px;
+.a-home__link {
+  margin-top: 30px;
+  text-align: center;
 }
 
-.pagination {
-  list-style-type: none;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.pagination li {
-  padding: 0 10px;
-}
-
-.titleNewsletter {
-  color: #A69F94;
-  font-family: "avenir";
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 50px;
-}
-
-.text {
-  background-color: #F6FCED;
-  width: 450px;
-  height: 150px;
-  font-family: "avenir";
-  padding: 15px;
-  color: #A69F94;
-  box-shadow: 0px 10px 8px -2px rgba(235, 235, 235, 0.66);
-}
-
-.pages {
-  margin-left: 150px;
-  margin-right: 150px;
-  margin-top: 50px;
+.intro {
+  font-style: italic;
+  font-size: 15px;
 }
 
 .form {
-  margin-top: 55px;
   padding-bottom: 100px;
 }
 
@@ -209,13 +233,15 @@ input .submit {
 .container_privacy {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  flex-wrap: nowrap;
   margin-bottom: 20px;
 }
 
 .img-box-pages__privacy {
   width: 50%;
   height: 50%;
-  margin-left: 300px;
+  margin-left: 270px;
   padding-bottom: 50px;
 }
 
@@ -238,16 +264,26 @@ input .submit {
   font-family: "avenir";
 }
 
-.dropdown_menu {
+.footer {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  width: 100vw;
+  height: 100%;
+  padding: 0px 20px;
+  background-color: #F6FCED;
+}
+
+.navigation_menu {
+  display: flex;
   flex-wrap: nowrap;
   box-shadow: 0px 10px 8px -2px rgba(235, 235, 235, 0.66);
+  justify-content: space-evenly;
+  padding: 0;
 }
 
 li {
   text-decoration: none;
-  padding-left: 105px;
   list-style: none;
   color: #A69F94;
 }
@@ -257,6 +293,10 @@ a {
   color: #A69F94;
   font-family: "avenir";
   text-transform: uppercase;
+}
+
+.topbar {
+  height: 30px;
 }
 
 .img_navigation {
@@ -269,11 +309,7 @@ a {
 .logo {
   width: 100px;
   height: 40px;
-  padding-left: 100px;
-}
-
-.topbar {
-  height: 30px;
+  transform: translateY(-9px);
 }
 
 .m-link {
@@ -332,4 +368,67 @@ td {
 
 /* @import '~bootstrap/scss/bootstrap';
  */
+
+h4 {
+  margin: 0px;
+  margin-bottom: 20px;
+}
+
+.title {
+  color: #A69F94;
+  font-family: "avenir";
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 80px;
+  text-align: center;
+}
+
+.title2 {
+  color: #A69F94;
+  font-family: "avenir";
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 50px;
+}
+
+.text {
+  background-color: #F6FCED;
+  width: 450px;
+  height: 150px;
+  font-family: "avenir";
+  padding: 15px;
+  color: #A69F94;
+  box-shadow: 0px 10px 8px -2px rgba(235, 235, 235, 0.66);
+}
+
+.pagination {
+  list-style-type: none;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.pagination li {
+  padding: 0 10px;
+}
+
+.pages {
+  margin-left: 150px;
+  margin-right: 150px;
+  margin-top: 50px;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.content {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
 

@@ -1,16 +1,15 @@
 
-.dropdown_menu{
+.navigation_menu{
     display: flex;
-    flex-direction: row;
     flex-wrap: nowrap;
     box-shadow: 0px 10px 8px -2px rgba(235,235,235,0.66);
+    justify-content: space-evenly;
+    padding: 0;
 
 }
 
-
 li {
     text-decoration: none;
-    padding-left: 105px;
     list-style: none;
     color: $grey;
 
@@ -23,7 +22,11 @@ a{
     text-transform: uppercase;
 }
 
+.topbar{
+    height: 30px;
+}
 
+//afbeelding center
 .img_navigation{
 
     width: 100%;
@@ -34,9 +37,7 @@ a{
 .logo{
     width: 100px;
     height: 40px;
-    padding-left: 100px;
+    transform: translateY(-9px);
 }
 
-.topbar{
-    height: 30px;
-}
+

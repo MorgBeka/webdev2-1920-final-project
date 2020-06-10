@@ -7,12 +7,6 @@ use Spatie\Newsletter\NewsletterFacade as Newsletter;
 
 class NewsletterController extends Controller
 {
-
-    public function index()
-    {
-        return view('newsletter');
-    }
-
     public function getIndex() {
 
         return view('pages.newsletter', [
@@ -22,6 +16,11 @@ class NewsletterController extends Controller
 
     public function postNewsletter(Request $request){
         Newsletter::subscribeOrUpdate($request->email);
-        return view('pages.newsletter');
+        return view('pages.validationNewsletter');
+    }
+
+    public function index()
+    {
+        return view('validationNewsletter');
     }
 }

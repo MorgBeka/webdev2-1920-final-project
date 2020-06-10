@@ -1,9 +1,11 @@
 <div class="row column">
-    <hr>
-    <ul class="menu">
-    <li class="float-right">Copyright {{ date('Y') }}</li>
+
+    <ul class="footer">
+        <li class="float-right">© Artevelde Hogeschool {{ date('Y') }} </li>
+        <li class="float-right">Morgane Bekaert</li>
     </ul>
-  </div>
+
+ </div>
 
 </body>
 

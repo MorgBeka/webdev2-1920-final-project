@@ -5,14 +5,15 @@
 
 <div class="pages">
 
-    <div class="title">
-        <h4>PRIVACY</h4>
-    </div>
-
     <div class="container_privacy">
+
+        <div class="title">
+            <h4>PRIVACY</h4>
+        </div>
+
         <img  class="img-box-pages__privacy" src="{{ asset('../images/privacy.jpg')}}">
     </div>
-    
+
 @foreach($privacy as $text)
     <div class="m-element_privacy">
 

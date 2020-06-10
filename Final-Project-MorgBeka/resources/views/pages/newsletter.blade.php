@@ -15,7 +15,7 @@
 <body>
 
     <div class="pages">
-                <div class="titleNewsletter">
+                <div class="title2">
                     <h4>Nieuwsbrief</h4>
                 </div>
 

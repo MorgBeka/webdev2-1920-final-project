@@ -62,10 +62,6 @@ class AdminController extends Controller
                 $image->storeAs($directory, $filename, 'public');
 
                 $this->storeImageToDatabase($request->title, $request->content, $request->summary, $filename, 'storage'.$directory);
-
-                //$about = About::all();
-                //return view('admin.adminAbout')->with(compact('about'));
-
             }
             return Redirect::to('/admin/about');
         }
@@ -119,7 +115,6 @@ class AdminController extends Controller
         }
 
         if($request->hasFile('file')) {
-            // folder van de afbeeldingen
 
             $directory = '/images';
 
@@ -129,17 +124,13 @@ class AdminController extends Controller
                 $filename = pathinfo($name, PATHINFO_FILENAME).'-'.uniqid(5).'.'.$extension;
                 $image->storeAs($directory, $filename, 'public');
                 $this->updateImageToDatabase($about, $request->title, $request->content, $request->summary, $filename, 'storage'.$directory);
-
-
             }
         }
-        //return view('admin.adminAbout')->with(compact('about'));
         return Redirect::to('/admin/about');
 
     }
 
     private function updateImageToDatabase($about, $title, $content, $summary, $filename, $filepath) {
-
 
         $about->imageTitle = $filename;
         $about->imagePath = $filepath;
@@ -155,12 +146,9 @@ class AdminController extends Controller
         $about =About::where('id', $about_id)->delete();
 
         return Redirect::to('/admin/about');
-
-
     }
 
     // news
-
     public function news(){
         $news = News::all(); //data in een variabele steken
         return view('admin.adminNews')->with(compact('news')); //with compact = meegeven naar view
@@ -260,7 +248,6 @@ class AdminController extends Controller
         }
 
         if($request->hasFile('file')) {
-            // folder van de afbeeldingen
 
             $directory = '/images';
 
@@ -290,18 +277,15 @@ class AdminController extends Controller
 
     public function newsDelete($news_id){
         $news =News::where('id', $news_id)->delete();
-        // $news = News::all();
-        // return view('admin.adminNews')->with(compact('news'));
+
         return Redirect::to('/admin/news');
 
     }
 
-
-
      // privacy
      public function privacy(){
-        $privacy = Privacy::all(); //data in een variabele steken
-        return view('admin.adminPrivacy')->with(compact('privacy')); //with compact = meegeven naar view
+        $privacy = Privacy::all();
+        return view('admin.adminPrivacy')->with(compact('privacy'));
     }
 
     public function privacyCreate(){
@@ -320,8 +304,10 @@ class AdminController extends Controller
             'content' => 'required',
         ]);
 
+        // validator slaat request op naar databank met eerst parameter
         $validator=Validator::make($request->all(), $rules);
 
+        //wanneer request niet voldoet aan regels kom je in de if
         if($validator->fails()) {
             return Redirect::back()
             ->withInput()
@@ -334,27 +320,11 @@ class AdminController extends Controller
             );
         }
 
-        if($request->hasFile('file')) {
-            // folder van de afbeeldingen
-
-            $directory = '/images';
-
-            foreach($request->file('file') as $image) {
-                $name = $image->getClientOriginalName();
-                $extension = $image->getClientOriginalExtension();
-                $filename = pathinfo($name, PATHINFO_FILENAME).'-'.uniqid(5).'.'.$extension;
-                $image->storeAs($directory, $filename, 'public');
-
-                $this->storeImageToDatabase($request->title, $request->content, $request->summary, $filename, 'storage'.$directory);
-            }
-            return Redirect::to('/admin/privacy');
-        }
 
     }
 
     public function privacyEdit($privacy_id){
         $privacy = Privacy::where('id', $privacy_id)->first();
-
 
         return view('admin.edits.editPrivacy')->with(compact('privacy'));
 
@@ -363,16 +333,13 @@ class AdminController extends Controller
     public function privacyUpdate($privacy_id, Request $request){
         $privacy = Privacy::where('id', $privacy_id)->first();
 
-        $rules= [
-            'file.*'=> 'image|mimes:jpeg,png,gif,svg,jpg|',
-        ];
 
         $data = [
             'title' => request('title'),
             'content' => request('content'),
         ];
 
-        $validator=Validator::make($request->all(), $rules);
+        $validator=Validator::make($request->all());
 
         if($validator->fails()) {
             return Redirect::back()
@@ -386,37 +353,20 @@ class AdminController extends Controller
             );
         }
 
-        if($request->hasFile('file')) {
-            // folder van de afbeeldingen
-
-            $directory = '/images';
-
-            foreach($request->file('file') as $image) {
-                $name = $image->getClientOriginalName();
-                $extension = $image->getClientOriginalExtension();
-                $filename = pathinfo($name, PATHINFO_FILENAME).'-'.uniqid(5).'.'.$extension;
-                $image->storeAs($directory, $filename, 'public');
-                $this->updateImageToDatabase($privacy, $request->title, $request->content, $request->summary, $filename, 'storage'.$directory);
-
-
-            }
-        }
         return Redirect::to('/admin/privacy');
 
     }
 
     public function privacyDelete($privacy_id){
-        $privacy =Privacy::where('id', $privacy_id)->delete();
+        $privacy = Privacy::where('id', $privacy_id)->delete();
         return Redirect::to('/admin/privacy');
     }
-
-
 
     // contact
 
     public function contact(){
-        $contact = Contact::all(); //data in een variabele steken
-        return view('admin.adminContact')->with(compact('contact')); //with compact = meegeven naar view
+        $contact = Contact::all();
+        return view('admin.adminContact')->with(compact('contact'));
     }
 
     public function contactCreate(){
@@ -435,7 +385,6 @@ class AdminController extends Controller
             'summary' => request('summary'),
         ];
 
-
         Privacy::create($data);
 
         $privacy = Privacy::all();
@@ -445,7 +394,6 @@ class AdminController extends Controller
 
     public function contactEdit($contact_id){
         $contact = Contact::where('id', $contact_id)->first();
-
 
         return view('admin.edits.editContact')->with(compact('contact'));
 
@@ -467,13 +415,10 @@ class AdminController extends Controller
 
     }
 
-    public function privacyContact($contact_id){
+    public function contactDelete($contact_id){
         $contact =Contact::where('id', $contact_id)->delete();
         $contact = Contact::all();
         return view('admin.adminContact')->with(compact('contact'));
 
     }
-
-
-
 }

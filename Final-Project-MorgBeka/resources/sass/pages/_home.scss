@@ -1,13 +1,16 @@
 
-.a-home{
+.o-home{
     height: 100vh;
     width: 100%;
     background-image:url(../images/background.jpg);
     background-size: cover;
     background-attachment: fixed;
+    margin-top: 25px;
 }
 
-.a-home__title{
+.a-home{
+
+    &__title{
     color: #A69F94;
     font-family: $font-family-avenir;
     font-weight: 700;
@@ -15,24 +18,21 @@
     font-size: 80px;
     text-align: center;
     padding-top: 230px;
+    }
 
-}
+    &__subtitle{
+        color: $grey;
+        font-family: $font-family-avenir;
+        font-weight: 200;
+        text-transform: uppercase;
+        font-size: 50px;
+        text-align: center;
+        padding-top: 0px;
+    }
 
-.subtitle{
-    color: $grey;
-    font-family: $font-family-avenir;
-    font-weight: 200;
-    text-transform: uppercase;
-    font-size: 50px;
-    text-align: center;
-    padding-top: 0px;
-}
-
-
-.containerDetail{
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 20px;
-
+    &__link{
+        margin-top: 30px;
+        text-align: center;
+    }
 }
 

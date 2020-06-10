@@ -35,8 +35,8 @@
         <td class="contentTable">{{$index->content}}</td>
         <td><a class="button" href="{{ route('privacyEdit', $index->id)}}">Edit</a></td>
         <td><a class="button" href="{{ route('privacyDelete', $index->id)}}">Delete</a></td>
-    </tr>
 
+    </tr>
 
     @endforeach
 </table>
