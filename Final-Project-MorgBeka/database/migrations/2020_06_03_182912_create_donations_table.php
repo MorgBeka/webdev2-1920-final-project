@@ -20,7 +20,8 @@ class CreateDonationsTable extends Migration
             $table->string('lastName');
             $table->string('email');
             $table->string('amount');
-         
+            $table->string('isPublic')->nullable();
+
 
             $table->timestamps();
         });

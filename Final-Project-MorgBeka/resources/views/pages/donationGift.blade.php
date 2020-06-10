@@ -24,7 +24,7 @@
                 </div>
 
                 <div class="m-donation__form">
-                    <form class="form" method="post" action="/success" enctype="multipart/form-data">
+                    <form class="form" method="post" action="/success">
                         @csrf
                         <label classname="form__label" for="lastName">Achternaam</label><br>
                         <input type="text" id="lastName" placeholder="Achternaam*" name="lastName" required><br><br>
@@ -46,19 +46,21 @@
                 </div>
 
 
-            {{-- <div class="m-title">
+           <div class="m-title">
                 <h6>Geplaatste donaties</h6>
             </div>
             <div class="m-donation__list">
                     @foreach($donations as $donation)
+                    @if($donation->isPublic == true)
                 <div class="m_element">
                         <div class="a_element">
                             <h1 class="a_element__title">{{$donation->firstName}} {{$donation->lastName}}</h1><br>
                             <p  class="a_element__summary">€ {{$donation->amount}}. 00</p>
                         </div>
                 </div>
+                    @endif
                     @endforeach
-            </div> --}}
+            </div>
         </div>
     </div>
 </div>

@@ -18,9 +18,7 @@ class AboutController extends Controller
 
     public function detail($about_id){
         $about = About::where('id', $about_id)->first();
-        // pages.aboutDetail --> mappen structuur
-        // with (compact ()) --> mee geven van data uit de controller naar de aangesproken view
-        // 'about' --> de data in de variable $about
+
         return view('pages.aboutDetail')->with(compact('about'));
     }
 }

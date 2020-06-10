@@ -18,22 +18,13 @@ class DonationController extends Controller
 
     public function getIndex()
     {
-        $donation = Donation::all();
-        return view('pages.donationGift')->with(compact('donation'));
+        $donations = Donation::all();
+        return view('pages.donationGift')->with(compact('donations'));
     }
 
-    public function getSuccess($donation_id, Request $request){
+    public function getSuccess(Request $request){
 
-        //dd($request->all());
-
-        if($request->isPublic == null){
-            $request->isPublic = false;
-        } else{
-            $request->isPublic = true;
-        }
-
-
-        $privacy = Donation::where('id', $donation_id)->first();
+        //dd($request->isPublic);
 
 
         $data = [
@@ -41,29 +32,15 @@ class DonationController extends Controller
             'firstName' => request('firstName'),
             'email' => request('email'),
             'amount' => request('amount'),
+            'isPublic' => $request->isPublic,
         ];
 
-        // validator slaat request op naar databank met eerst parameter
-
-        $validator=Validator::make($request->all());
-
-        //wanneer request niet voldoet aan regels kom je in de if
-        if($validator->fails()) {
-            return Redirect::back()
-            ->withInput()
-            ->withErrors($validator)
-            ->with(
-                [
-                    'notification'=>'succes',
-                    'message'=>'Er ging iets mis'
-                ]
-            );
-        }
+        //mollie
 
         $payment = Mollie::api()->payments->create([
             "amount" => [
                 "currency" => "EUR",
-                "value" => $request->amount . ".00" // You must send the correct number of decimals, thus we enforce the use of strings
+                "value" => $request->amount . ".00"
             ],
 
             "description" => "My donation to Hello Fresh",
@@ -72,6 +49,9 @@ class DonationController extends Controller
         ]);
 
         $payment = Mollie::api()->payments->get($payment->id);
+           // dd($payment);
+
+        $donation = Donation::create($data);
 
 
         // redirect customer to Mollie checkout page
